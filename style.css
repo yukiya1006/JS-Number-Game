@@ -1,0 +1,60 @@
+body {
+  background: #ccc;
+  color: #fff;
+  font-family: 'Courier New', sans-serif;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+#container {
+  margin: 30px auto;
+}
+
+#board {
+  list-style: none;
+  margin: 0;
+  border-radius: 5px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+#board li {
+  background-color: aquamarine;
+  width: 95px;
+  height: 95px;
+  color: #000;
+  margin: 5px;
+  cursor: pointer;
+  text-align: center;
+  line-height: 95px;
+  box-shadow: 5px 5px 10px rgba(0,0,0,0.5);
+}
+
+#board li.pressed {
+  background: rgba(127, 255, 212, 0.301);
+  box-shadow: none;
+  color: #fff;
+}
+
+#timer {
+  margin-bottom: 10px;
+  text-align: right;
+}
+
+#btn {
+  margin-top: 10px;
+  cursor: pointer;
+  user-select: none;
+  background-color: rgb(115, 0, 255);
+  width: 100px;
+  border-radius: 5px;
+  text-align: center;
+  padding: 5px;
+  box-shadow: 0 10px 0 rgb(93, 0, 255);
+}
+
+/* 疑似要素 */
+#btn:active {
+  margin-top: 20px;
+  box-shadow: none;
+}
