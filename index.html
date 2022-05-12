@@ -10,6 +10,9 @@
 <body>
   <div id="container">
     <div id="timer">0.0</div>
+    <div class="title">
+      <h1>0から順番に文字を消しましょう</h1>
+    </div>
     <ul id="board">
     </ul>
     <div id="btn">START</div>
@@ -23,6 +26,7 @@
   const check = new Audio('audio/check.mp3');
   const warning = new Audio('audio/warning.mp3');
   const finish = new Audio('audio/finish.mp3');
+  const title = document.getElementsByClassName('title');
 
   class Panel {
     constructor(game) {
@@ -45,7 +49,7 @@
     }
 
     check() {
-      if (this.game.getCurrentNum() === parseInt(this.el.textContent, 10)) { //
+      if (this.game.getCurrentNum() === parseInt(this.el.textContent, 10)) { 
         this.el.classList.add('pressed');
         this.game.addCurrentNum();
 
@@ -104,13 +108,14 @@
       btn.addEventListener('click', () => {
         this.start();
         music.play();
+        title.classList.add('active');
       });
       this.setup();
     }
 
     setup() {
       const container = document.getElementById('container');
-      const PANEL_WIDTH = 110;
+      const PANEL_WIDTH = 50;
       const BOARD_PADDING = 10;
       /* 50px * 2 + 10px * 2 */
       container.style.width = PANEL_WIDTH * this.level + BOARD_PADDING * 2 + 'px';
